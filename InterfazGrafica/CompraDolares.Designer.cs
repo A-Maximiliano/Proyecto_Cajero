@@ -32,6 +32,7 @@ namespace InterfazGrafica
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompraDolares));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblnumTar = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -54,8 +55,7 @@ namespace InterfazGrafica
             this.lblNombreCom = new System.Windows.Forms.Label();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblnumTar = new System.Windows.Forms.Label();
-            this.txtNumTarjeta = new System.Windows.Forms.TextBox();
+            this.mtxtTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -64,7 +64,7 @@ namespace InterfazGrafica
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panel1.Controls.Add(this.txtNumTarjeta);
+            this.panel1.Controls.Add(this.mtxtTarjeta);
             this.panel1.Controls.Add(this.lblnumTar);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label21);
@@ -91,6 +91,17 @@ namespace InterfazGrafica
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(687, 645);
             this.panel1.TabIndex = 3;
+            // 
+            // lblnumTar
+            // 
+            this.lblnumTar.AutoSize = true;
+            this.lblnumTar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnumTar.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblnumTar.Location = new System.Drawing.Point(17, 241);
+            this.lblnumTar.Name = "lblnumTar";
+            this.lblnumTar.Size = new System.Drawing.Size(172, 21);
+            this.lblnumTar.TabIndex = 166;
+            this.lblnumTar.Text = "Número de tarjeta";
             // 
             // label22
             // 
@@ -334,26 +345,17 @@ namespace InterfazGrafica
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // lblnumTar
+            // mtxtTarjeta
             // 
-            this.lblnumTar.AutoSize = true;
-            this.lblnumTar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnumTar.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblnumTar.Location = new System.Drawing.Point(17, 241);
-            this.lblnumTar.Name = "lblnumTar";
-            this.lblnumTar.Size = new System.Drawing.Size(172, 21);
-            this.lblnumTar.TabIndex = 166;
-            this.lblnumTar.Text = "Número de tarjeta";
-            // 
-            // txtNumTarjeta
-            // 
-            this.txtNumTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtNumTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumTarjeta.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtNumTarjeta.Location = new System.Drawing.Point(222, 241);
-            this.txtNumTarjeta.Name = "txtNumTarjeta";
-            this.txtNumTarjeta.Size = new System.Drawing.Size(252, 24);
-            this.txtNumTarjeta.TabIndex = 167;
+            this.mtxtTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.mtxtTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtTarjeta.ForeColor = System.Drawing.SystemColors.Window;
+            this.mtxtTarjeta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.mtxtTarjeta.Location = new System.Drawing.Point(222, 241);
+            this.mtxtTarjeta.Mask = "0000-0000-0000-0000";
+            this.mtxtTarjeta.Name = "mtxtTarjeta";
+            this.mtxtTarjeta.Size = new System.Drawing.Size(252, 24);
+            this.mtxtTarjeta.TabIndex = 171;
             // 
             // CompraDolares
             // 
@@ -397,7 +399,7 @@ namespace InterfazGrafica
         private System.Windows.Forms.Button btnVolverMenu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox txtNumTarjeta;
         private System.Windows.Forms.Label lblnumTar;
+        private System.Windows.Forms.MaskedTextBox mtxtTarjeta;
     }
 }

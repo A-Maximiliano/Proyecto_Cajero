@@ -15,10 +15,12 @@ namespace InterfazGrafica
     {
         private Servicios N_servicios;
         bool bandera = false;
+        MaskedTextBox dynamicMaskedTextBox = new MaskedTextBox();
 
         public PagoServicios()
         {
             InitializeComponent();
+
         }
 
         private void btnVolverMenu_Click(object sender, EventArgs e)
@@ -66,17 +68,17 @@ namespace InterfazGrafica
                 }
                 errorProvider1.SetError(txtApellidoPag, "");
 
-                if (txtTarjeta.Text == "" || !int.TryParse(txtTarjeta.Text, out verificar))
+                if (mtxtTarjeta.Text == "" || mtxtTarjeta.Text.Length < 19)
                 {
-                    errorProvider1.SetError(txtTarjeta, "Debe ingresar el numero de tarjeta correctamente");
-                    txtTarjeta.Focus();
+                    errorProvider1.SetError(mtxtTarjeta, "Debe ingresar el numero de tarjeta correctamente");
+                    mtxtTarjeta.Focus();
                     return;
                 }
-                errorProvider1.SetError(txtTarjeta, "");
+                errorProvider1.SetError(mtxtTarjeta, "");
 
-                if (txtServicio.Text == "" || !decimal.TryParse(txtServicio.Text, out verificar2))
+                if (txtServicio.Text == "")
                 {
-                    errorProvider1.SetError(txtServicio, "Debe ingresar el numero de tarjeta");
+                    errorProvider1.SetError(txtServicio, "Debe ingresar el servicio");
                     txtServicio.Focus();
                     return;
                 }
@@ -94,7 +96,7 @@ namespace InterfazGrafica
                 myCliente.Cedula = Convert.ToInt32(txtCedulaPag.Text);
                 myCliente.Nombre = txtNombrePag.Text;
                 myCliente.Apellidos = txtApellidoPag.Text;
-                myCliente.No_Tarjeta = Convert.ToInt32(txtTarjeta.Text);
+                myCliente.No_Tarjeta = mtxtTarjeta.Text;
                 N_servicios.tipoServicio = txtServicio.Text;
                 N_servicios.montoCancelar = Convert.ToInt32(txtMontoCancelar.Text);
                 myCliente.Transaccion = N_servicios.montoCancelar;
@@ -109,7 +111,7 @@ namespace InterfazGrafica
                     bandera = false;
                 }
             }
-            catch (Exception)
+            catch (Exception x)
             {
 
                 MessageBox.Show("Intente de nuevo, por favor."); ;
@@ -138,5 +140,7 @@ namespace InterfazGrafica
         {
             MessageBox.Show("El saldo corresponde a: " + N_servicios.CalcularSaldo());
         }
+
+      
     }
 }

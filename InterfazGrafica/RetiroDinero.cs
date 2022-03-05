@@ -19,7 +19,7 @@ namespace InterfazGrafica
         public RetiroDinero()
         {
             InitializeComponent();
-            borrar();
+            //borrar();
         }
 
         private void btnVolverMenu_Click(object sender, EventArgs e)
@@ -67,13 +67,13 @@ namespace InterfazGrafica
                 }
                 errorProvider1.SetError(txtApellidoRet, "");
 
-                if (txtTarjetaRet.Text == "" || !int.TryParse(txtTarjetaRet.Text, out verificar))
+                if (mtxtTarjeta.Text == "" || mtxtTarjeta.Text.Length < 19)
                 {
-                    errorProvider1.SetError(txtTarjetaRet, "Debe ingresar el numero de tarjeta");
-                    txtTarjetaRet.Focus();
+                    errorProvider1.SetError(mtxtTarjeta, "Debe ingresar el numero de tarjeta");
+                    mtxtTarjeta.Focus();
                     return;
                 }
-                errorProvider1.SetError(txtTarjetaRet, "");
+                errorProvider1.SetError(mtxtTarjeta, "");
 
                 if (txtMontoRetirar.Text == "" || !decimal.TryParse(txtMontoRetirar.Text, out verificar2))
                 {
@@ -87,7 +87,8 @@ namespace InterfazGrafica
                 myCliente.Cedula = Convert.ToInt32(txtCedulaRet.Text);
                 myCliente.Nombre = txtNombreRet.Text;
                 myCliente.Apellidos = txtApellidoRet.Text;
-                myCliente.No_Tarjeta = Convert.ToInt32(txtTarjetaRet.Text);
+                //myCliente.No_Tarjeta = Convert.ToInt32(txtTarjetaRet.Text);
+                myCliente.No_Tarjeta = mtxtTarjeta.Text;
                 myCliente.Transaccion = Convert.ToDecimal(txtMontoRetirar.Text);
                 N_retiro.AgregarCliente(myCliente);
                 //MessageBox.Show("Se guardó correctamente");
@@ -112,7 +113,7 @@ namespace InterfazGrafica
             txtCedulaRet.Text = "5";
             txtNombreRet.Text = "5";
             txtApellidoRet.Text = "5";
-            txtTarjetaRet.Text = "5";
+            mtxtTarjeta.Text = "5123456789123416";
             txtMontoRetirar.Text = "5";
         }
 

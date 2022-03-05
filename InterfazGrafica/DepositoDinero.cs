@@ -69,15 +69,15 @@ namespace InterfazGrafica
                  }
                  errorProvider1.SetError(txtApellidoDep, "");
 
-                 if (txtTarjetaDep.Text == "" || !int.TryParse(txtTarjetaDep.Text, out verificar))
+                 if (mtxtTarjeta.Text == "" || mtxtTarjeta.Text.Length < 19)
                  {
-                     errorProvider1.SetError(txtTarjetaDep, "Debe ingresar el numero de tarjeta");
-                    txtTarjetaDep.Focus();
+                     errorProvider1.SetError(mtxtTarjeta, "Debe ingresar el numero de tarjeta");
+                    mtxtTarjeta.Focus();
                      return;
                  }
-                 errorProvider1.SetError(txtTarjetaDep, "");
+                 errorProvider1.SetError(mtxtTarjeta, "");
 
-                if (txtMontoDepositar.Text == "" || !decimal.TryParse(txtTarjetaDep.Text, out verificar2))
+                if (txtMontoDepositar.Text == "" || !decimal.TryParse(txtMontoDepositar.Text, out verificar2))
                 {
                     errorProvider1.SetError(txtMontoDepositar, "Debe ingresar el monto a depositar");
                     txtMontoDepositar.Focus();
@@ -89,7 +89,7 @@ namespace InterfazGrafica
                  myCliente.Cedula = Convert.ToInt32(txtCedulaDep.Text);
                  myCliente.Nombre = txtNombreDep.Text;
                  myCliente.Apellidos = txtApellidoDep.Text;
-                 myCliente.No_Tarjeta = Convert.ToInt32(txtTarjetaDep.Text);
+                 myCliente.No_Tarjeta = mtxtTarjeta.Text;
                  myCliente.Transaccion = Convert.ToDecimal(txtMontoDepositar.Text);
                  N_deposito.AgregarCliente(myCliente);
                  MessageBox.Show("Se guardó correctamente");

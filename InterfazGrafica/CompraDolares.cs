@@ -19,7 +19,7 @@ namespace InterfazGrafica
         public CompraDolares()
         {
             InitializeComponent();
-            borrar();
+            //borrar();
         }
 
         private void borrar()
@@ -27,7 +27,7 @@ namespace InterfazGrafica
             txtCedulaCom.Text = "5";
             txtNobreCom.Text = "5";
             txtApellidoCom.Text = "5";
-            txtNumTarjeta.Text = "5";
+            mtxtTarjeta.Text = "1234567899876543";
             txtTipoCambio.Text = "5";
             txtCantidadDolares.Text = "5";
         }
@@ -77,9 +77,17 @@ namespace InterfazGrafica
                 }
                 errorProvider1.SetError(txtApellidoCom, "");
 
+                if (mtxtTarjeta.Text == "" || mtxtTarjeta.Text.Length < 19)
+                {
+                    errorProvider1.SetError(mtxtTarjeta, "Debe ingresar el numero de tarjeta");
+                    mtxtTarjeta.Focus();
+                    return;
+                }
+                errorProvider1.SetError(mtxtTarjeta, "");
+
                 if (txtCantidadDolares.Text == "" || !decimal.TryParse(txtCantidadDolares.Text, out verificar2))
                 {
-                    errorProvider1.SetError(txtCantidadDolares, "Debe ingresar el numero de tarjeta");
+                    errorProvider1.SetError(txtCantidadDolares, "Debe ingresar el monto a retirar");
                     txtCantidadDolares.Focus();
                     return;
                 }
@@ -87,7 +95,7 @@ namespace InterfazGrafica
 
                 if (txtTipoCambio.Text == "" || !decimal.TryParse(txtTipoCambio.Text, out verificar2))
                 {
-                    errorProvider1.SetError(txtTipoCambio, "Debe ingresar el monto a retirar");
+                    errorProvider1.SetError(txtTipoCambio, "Debe indicar el tipo de cambio");
                     txtTipoCambio.Focus();
                     return;
                 }
@@ -97,7 +105,8 @@ namespace InterfazGrafica
                 myCliente.Cedula = Convert.ToInt32(txtCantidadDolares.Text);
                 myCliente.Nombre = txtNobreCom.Text;
                 myCliente.Apellidos = txtApellidoCom.Text;
-                myCliente.No_Tarjeta = Convert.ToInt32(txtNumTarjeta.Text);
+               // myCliente.No_Tarjeta = Convert.ToInt32(txtNumTarjeta.Text);
+                myCliente.No_Tarjeta = mtxtTarjeta.Text;
                 //myCliente.saldo = Convert.ToDecimal(txtTipoCambio.Text);
                 N_compra.tipoCambio = Convert.ToDecimal(txtTipoCambio.Text);
                 N_compra.cantidadDolares = Convert.ToInt32(txtCantidadDolares.Text);

@@ -34,17 +34,16 @@ namespace InterfazGrafica
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnRetirar = new System.Windows.Forms.Button();
             this.btnCalcularRet = new System.Windows.Forms.Button();
             this.btnAsignarRet = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblcedula = new System.Windows.Forms.Label();
             this.txtMontoRetirar = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtTarjetaRet = new System.Windows.Forms.TextBox();
             this.txtNombreRet = new System.Windows.Forms.TextBox();
             this.txtApellidoRet = new System.Windows.Forms.TextBox();
             this.txtCedulaRet = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@ namespace InterfazGrafica
             this.lblNombre = new System.Windows.Forms.Label();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtxtTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
@@ -63,6 +63,7 @@ namespace InterfazGrafica
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panel1.Controls.Add(this.mtxtTarjeta);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
@@ -74,7 +75,6 @@ namespace InterfazGrafica
             this.panel1.Controls.Add(this.lblcedula);
             this.panel1.Controls.Add(this.txtMontoRetirar);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.txtTarjetaRet);
             this.panel1.Controls.Add(this.txtNombreRet);
             this.panel1.Controls.Add(this.txtApellidoRet);
             this.panel1.Controls.Add(this.txtCedulaRet);
@@ -109,17 +109,6 @@ namespace InterfazGrafica
             this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 159;
             this.label2.Text = "Calcular saldos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(38, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
-            this.label3.TabIndex = 157;
-            this.label3.Text = "Retirar";
             // 
             // label4
             // 
@@ -202,6 +191,17 @@ namespace InterfazGrafica
             this.panel2.Size = new System.Drawing.Size(130, 319);
             this.panel2.TabIndex = 165;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(38, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.TabIndex = 157;
+            this.label3.Text = "Retirar";
+            // 
             // lblcedula
             // 
             this.lblcedula.AutoSize = true;
@@ -233,16 +233,6 @@ namespace InterfazGrafica
             this.label18.Size = new System.Drawing.Size(192, 21);
             this.label18.TabIndex = 146;
             this.label18.Text = "RETIRO DE EFECTIVO";
-            // 
-            // txtTarjetaRet
-            // 
-            this.txtTarjetaRet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtTarjetaRet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTarjetaRet.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtTarjetaRet.Location = new System.Drawing.Point(222, 271);
-            this.txtTarjetaRet.Name = "txtTarjetaRet";
-            this.txtTarjetaRet.Size = new System.Drawing.Size(252, 24);
-            this.txtTarjetaRet.TabIndex = 144;
             // 
             // txtNombreRet
             // 
@@ -331,6 +321,18 @@ namespace InterfazGrafica
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // mtxtTarjeta
+            // 
+            this.mtxtTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.mtxtTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtTarjeta.ForeColor = System.Drawing.SystemColors.Window;
+            this.mtxtTarjeta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.mtxtTarjeta.Location = new System.Drawing.Point(222, 277);
+            this.mtxtTarjeta.Mask = "0000-0000-0000-0000";
+            this.mtxtTarjeta.Name = "mtxtTarjeta";
+            this.mtxtTarjeta.Size = new System.Drawing.Size(252, 24);
+            this.mtxtTarjeta.TabIndex = 170;
+            // 
             // RetiroDinero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,7 +358,6 @@ namespace InterfazGrafica
         private System.Windows.Forms.Label lblcedula;
         private System.Windows.Forms.TextBox txtMontoRetirar;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtTarjetaRet;
         private System.Windows.Forms.TextBox txtNombreRet;
         private System.Windows.Forms.TextBox txtApellidoRet;
         private System.Windows.Forms.TextBox txtCedulaRet;
@@ -375,5 +376,6 @@ namespace InterfazGrafica
         private System.Windows.Forms.Button btnVolverMenu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox mtxtTarjeta;
     }
 }

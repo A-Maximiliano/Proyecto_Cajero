@@ -43,7 +43,6 @@ namespace InterfazGrafica
             this.btnAsignar = new System.Windows.Forms.Button();
             this.btnVolverMenu = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtTarjetaDep = new System.Windows.Forms.TextBox();
             this.txtNombreDep = new System.Windows.Forms.TextBox();
             this.txtApellidoDep = new System.Windows.Forms.TextBox();
             this.txtCedulaDep = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@ namespace InterfazGrafica
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtxtTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -62,6 +62,7 @@ namespace InterfazGrafica
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panel1.Controls.Add(this.mtxtTarjeta);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.lblcedula);
             this.panel1.Controls.Add(this.label21);
@@ -73,7 +74,6 @@ namespace InterfazGrafica
             this.panel1.Controls.Add(this.btnAsignar);
             this.panel1.Controls.Add(this.btnVolverMenu);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.txtTarjetaDep);
             this.panel1.Controls.Add(this.txtNombreDep);
             this.panel1.Controls.Add(this.txtApellidoDep);
             this.panel1.Controls.Add(this.txtCedulaDep);
@@ -225,16 +225,6 @@ namespace InterfazGrafica
             this.label18.TabIndex = 146;
             this.label18.Text = "DEPÓSITOS DE EFECTIVO";
             // 
-            // txtTarjetaDep
-            // 
-            this.txtTarjetaDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtTarjetaDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTarjetaDep.ForeColor = System.Drawing.SystemColors.Menu;
-            this.txtTarjetaDep.Location = new System.Drawing.Point(222, 277);
-            this.txtTarjetaDep.Name = "txtTarjetaDep";
-            this.txtTarjetaDep.Size = new System.Drawing.Size(252, 24);
-            this.txtTarjetaDep.TabIndex = 144;
-            // 
             // txtNombreDep
             // 
             this.txtNombreDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -330,6 +320,18 @@ namespace InterfazGrafica
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // mtxtTarjeta
+            // 
+            this.mtxtTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.mtxtTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtTarjeta.ForeColor = System.Drawing.SystemColors.Window;
+            this.mtxtTarjeta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
+            this.mtxtTarjeta.Location = new System.Drawing.Point(222, 277);
+            this.mtxtTarjeta.Mask = "0000-0000-0000-0000";
+            this.mtxtTarjeta.Name = "mtxtTarjeta";
+            this.mtxtTarjeta.Size = new System.Drawing.Size(252, 24);
+            this.mtxtTarjeta.TabIndex = 169;
+            // 
             // DepositoDinero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,7 +359,6 @@ namespace InterfazGrafica
         private System.Windows.Forms.Button btnAsignar;
         private System.Windows.Forms.Button btnVolverMenu;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtTarjetaDep;
         private System.Windows.Forms.TextBox txtNombreDep;
         private System.Windows.Forms.TextBox txtApellidoDep;
         private System.Windows.Forms.TextBox txtCedulaDep;
@@ -372,5 +373,6 @@ namespace InterfazGrafica
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox mtxtTarjeta;
     }
 }
